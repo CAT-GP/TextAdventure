@@ -4,7 +4,9 @@
 #include <string>
 
 #include "CommandsLibrary.h"
+#include "DataManager.h"
 #include "Game.h"
+
 
 Game::Game() {
     isRunning = true;
@@ -12,7 +14,7 @@ Game::Game() {
 
 void Game::Awake()
 {
-
+    LoadGameData(GameData);
 }
 
 void Game::Start()
@@ -21,22 +23,28 @@ void Game::Start()
     ActionMap currentActionMap = SettingCommands(InteractFunc);
 
     OptionSelection(currentActionMap, commandA, commandB);
-
-    if (isRunning) {
-        std::cout << "Game Description...\n";
-        system("pause");
-    }
 }
 
-void Game::Update() {
-
+void Game::Update() 
+{
     if (isRunning)
     {
-        std::cout << "IsRunning\n";
+
     }
 }
 
-void Game::Interact(const std::string& Item)
+void Game::Interact(const std::string& item)
 {
-    std::cout << "Interacting with " << Item << "!" << std::endl;
+    for(std::string gameItem : GameData.itemList)
+    {
+        if (StringAreEqual(gameItem, item))
+        {
+            std::cout << "Interacted with " << item << ". " << item << " added to inventory" << std::endl;
+            GameData.inventory.push_back(item);
+            return;
+        }
+    }
+    
+    std::cout << "There are no " << item << " in the room!" << std::endl;
+
 }

@@ -4,8 +4,6 @@
 #include <iostream>
 #include <map>
 
-
-
 class Game {
 
 public:
@@ -15,8 +13,7 @@ public:
     bool isRunning;
     std::string commandA;
     std::string commandB;
-
-
+    GameData GameData;
 public:
     Game();
     void Awake();

@@ -15,9 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="TextAdventure.h">
-      <Filter>File di intestazione</Filter>
-    </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
@@ -27,12 +24,18 @@
     <ClInclude Include="CommandsLibrary.h">
       <Filter>File di intestazione</Filter>
     </ClInclude>
+    <ClInclude Include="DataManager.h">
+      <Filter>File di intestazione</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="TextAdventure.cpp">
+    <ClCompile Include="Game.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
-    <ClCompile Include="Game.cpp">
+    <ClCompile Include="MainTextAdventure.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
+    <ClCompile Include="DataManager.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
   </ItemGroup>

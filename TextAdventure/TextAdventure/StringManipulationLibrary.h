@@ -29,3 +29,8 @@ void SplitString(const std::string& str, std::string& commandA, std::string& com
 		commandB = "";
 	}
 }
+
+bool StringAreEqual(const std::string& strA, const std::string& strB)
+{
+	return strA == strB;
+}
