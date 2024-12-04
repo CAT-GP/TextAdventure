@@ -18,7 +18,7 @@ void SplitString(const std::string& str, std::string& commandA, std::string& com
 {
 	size_t spacePosition = str.find(' ');
 
-	if (spacePosition == std::string::npos)
+	if (spacePosition != std::string::npos)
 	{
 		commandA = str.substr(0, spacePosition);
 		commandB = str.substr(spacePosition + 1);

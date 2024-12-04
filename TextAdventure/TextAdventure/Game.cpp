@@ -1,12 +1,10 @@
 #include <functional>
 #include <iostream>
-#include <algorithm>
 #include <map>
 #include <string>
 
-#include "Game.h"
-#include "StringManipulationLibrary.h"
 #include "CommandsLibrary.h"
+#include "Game.h"
 
 Game::Game() {
     isRunning = true;
@@ -14,13 +12,15 @@ Game::Game() {
 
 void Game::Awake()
 {
-   InteractLinkFunction = std::bind(&Game::Interact, this, std::placeholders::_1);
+
 }
 
 void Game::Start()
 {
-    ActionMap actionMap = SettingCommands(InteractLinkFunction);
-    OptionSelection(actionMap, commandA, commandB);
+    std::function<void(const std::string)> InteractFunc = std::bind(&Game::Interact, this, std::placeholders::_1);
+    ActionMap currentActionMap = SettingCommands(InteractFunc);
+
+    OptionSelection(currentActionMap, commandA, commandB);
 
     if (isRunning) {
         std::cout << "Game Description...\n";
@@ -36,6 +36,7 @@ void Game::Update() {
     }
 }
 
-void Game::Interact(const std::string Item)
+void Game::Interact(const std::string& Item)
 {
+    std::cout << "Interacting with " << Item << "!" << std::endl;
 }

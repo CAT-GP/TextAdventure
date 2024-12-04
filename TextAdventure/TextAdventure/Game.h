@@ -5,6 +5,7 @@
 #include <map>
 
 
+
 class Game {
 
 public:
@@ -14,7 +15,6 @@ public:
     bool isRunning;
     std::string commandA;
     std::string commandB;
-   
 
 
 public:
@@ -23,6 +23,6 @@ public:
     void Start();
     void Update();
 
-    void Interact(const std::string Item);
+    void Interact(const std::string& Item);
     std::function<void(const std::string)> InteractLinkFunction;
 };

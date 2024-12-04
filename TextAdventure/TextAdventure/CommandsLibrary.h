@@ -1,12 +1,16 @@
 #pragma once
+#include <algorithm>
+#include <string>
 
-using ActionMap = std::map<std::string, Action>;
+#include "StringManipulationLibrary.h"
 
 struct Action {
     std::string description;
     std::function<void(std::string value)> mainAction;
     std::function<void()> endFunc;
 };
+
+using ActionMap = std::map<std::string, Action>;
 
 void OptionSelection(const ActionMap& actions, std::string commandA, std::string commandB) {
     std::string answer;
@@ -17,7 +21,7 @@ void OptionSelection(const ActionMap& actions, std::string commandA, std::string
     do {
         system("cls");
         std::cout << "What should i do?\n";
-        std::cin >> answer;
+        std::getline(std::cin, answer);
 
         std::transform(answer.begin(), answer.end(), answer.begin(), ::toupper);
 
@@ -30,7 +34,7 @@ void OptionSelection(const ActionMap& actions, std::string commandA, std::string
             waitingForAnswer = false;
         }
         else {
-            std::cout << "Invalid option. Please try again.\n";
+            std::cout << "Invalid Command...\n";
             system("pause");
         }
 
