@@ -7,6 +7,7 @@
 struct GameData
 {
 	std::vector<std::string> itemList;
+	std::vector<std::string> enemyList;
 	std::vector<std::string> inventory;
 };
 

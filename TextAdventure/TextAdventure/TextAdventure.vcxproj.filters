@@ -38,5 +38,8 @@
     <ClCompile Include="DataManager.cpp">
       <Filter>File di origine</Filter>
     </ClCompile>
+    <ClCompile Include="StringManipulationLibrary.cpp">
+      <Filter>File di origine</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

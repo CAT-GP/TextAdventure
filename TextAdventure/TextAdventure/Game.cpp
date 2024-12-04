@@ -27,9 +27,10 @@ void Game::Start()
 
 void Game::Update() 
 {
+    std::string w;
     if (isRunning)
     {
-
+        std::cin >> w;
     }
 }
 
